@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pers.food.mapper.ProductInfoMapper">
+    <select id="selectProductInfoInId" resultType="com.pers.food.object.po.ProductInfo">
+        select * from product_info where product_id IN
+        <foreach collection="list" item="productId" open="(" close=")" separator=",">
+            #{productId}
+        </foreach>
+    </select>
+</mapper>

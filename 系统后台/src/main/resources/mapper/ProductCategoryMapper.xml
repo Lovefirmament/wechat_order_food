@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pers.food.mapper.ProductCategoryMapper">
+    <select id="selectCategoryInType" resultType="com.pers.food.object.po.ProductCategory">
+        select * from product_category where category_type IN
+        <foreach collection="list" item="categoryType" open="(" close=")" separator=",">
+        #{categoryType}
+        </foreach>
+    </select>
+</mapper>

@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/springboot_shell?serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: true
+  freemarker:
+    template-loader-path: classpath:/templates
+    cache: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+server:
+  port: 8889
+  servlet:
+    context-path: /sell
+
+wechat:
+  mpAppId: wxd898fcb01713c658
+  mpAppSecret:
+  mchId: 1483469312
+  mchKey: 098F6BCD4621D373CADE4E832627B4F6
+  keypath: /opt/paykey/h5.p12
+  notifyUrl: http://zhmb.natapp1.cc/sell/pay/notify
+  openAppId: wx7ec1630ac1ea0cb7
+  openAppSecret: e6b66499b2e66ac17afb10f41533719f
